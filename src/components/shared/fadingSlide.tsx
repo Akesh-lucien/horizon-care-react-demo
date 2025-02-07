@@ -35,7 +35,7 @@ function FadingSlide({ children, delay, vertical }: FadingSlideProps) {
           trigger: containerRef.current,
           start: "top bottom-=100",
           end: "bottom top",
-          toggleActions: "play none none reset",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -55,7 +55,7 @@ function FadingSlide({ children, delay, vertical }: FadingSlideProps) {
           trigger: containerRef.current,
           start: "top bottom-=100",
           end: "bottom top",
-          toggleActions: "play none none reset",
+          toggleActions: "play none none reverse",
         },
       }
     );

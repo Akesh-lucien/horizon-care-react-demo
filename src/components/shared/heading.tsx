@@ -27,59 +27,105 @@ function Heading({
   const headRef = useRef<HTMLHeadingElement>(null);
   const headRef1 = useRef<HTMLHeadingElement>(null);
   const subHedRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  // const textElements = document.querySelectorAll(".accent-hed");
+
+  // textElements.forEach((element) => {
+  //   // Split text into individual characters
+  //   const text = element.textContent || "";
+  //   element.textContent = "";
+
+  //   // Create spans for each character, preserving spaces
+  //   const chars = text.split("").map((char) => {
+  //     const span = document.createElement("span");
+  //     if (char === " ") {
+  //       span.innerHTML = "&nbsp;";
+  //     } else {
+  //       span.textContent = char;
+  //     }
+  //     span.style.display = "inline-block";
+  //     element.appendChild(span);
+  //     return span;
+  //   });
+
+  //   gsap.fromTo(
+  //     chars,
+  //     {
+  //       opacity: 0,
+  //       x: -50,
+  //       immediateRender: false,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       x: 0,
+  //       duration: 0.8,
+  //       stagger: 0.03,
+  //       ease: "power2.out",
+  //       scrollTrigger: {
+  //         trigger: containerRef.current,
+  //         start: "top 60%",
+  //         end: "bottom 20%",
+  //         toggleActions: "play none none none",
+  //         invalidateOnRefresh: true,
+  //       },
+  //     }
+  //   );
+  // });
+
+  // const textElements = document.querySelectorAll(".accent-hed");
+
+  // textElements?.forEach((element) => {
+  //   // Split text into individual characters
+  //   const text = element.textContent || "";
+  //   element.textContent = "";
+
+  //   // Create spans for each character, preserving spaces
+  //   const chars = text.split("").map((char) => {
+  //     const span = document.createElement("span");
+  //     if (char === " ") {
+  //       span.innerHTML = "&nbsp;";
+  //     } else {
+  //       span.textContent = char;
+  //     }
+  //     span.style.display = "inline-block";
+  //     element.appendChild(span);
+  //     return span;
+  //   });
+
+  //   gsap.fromTo(
+  //     chars,
+  //     {
+  //       opacity: 0,
+  //       x: -50,
+  //       immediateRender: false,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       x: 0,
+  //       duration: 0.8,
+  //       stagger: 0.03,
+  //       ease: "power2.out",
+  //       scrollTrigger: {
+  //         trigger: containerRef.current,
+  //         start: "top 60%",
+  //         end: "bottom 20%",
+  //         toggleActions: "play none none none",
+  //         invalidateOnRefresh: true,
+  //       },
+  //     }
+  //   );
+  // });
 
   useGSAP(() => {
     if (
       !headRef.current ||
       !headRef1.current ||
       !subHedRef.current ||
-      !containerRef.current
+      !containerRef.current ||
+      !textRef.current
     )
       return;
-
-    const textElements = document.querySelectorAll(".accent-hed");
-
-    textElements?.forEach((element) => {
-      // Split text into individual characters
-      const text = element.textContent || "";
-      element.textContent = "";
-
-      // Create spans for each character, preserving spaces
-      const chars = text.split("").map((char) => {
-        const span = document.createElement("span");
-        if (char === " ") {
-          span.innerHTML = "&nbsp;";
-        } else {
-          span.textContent = char;
-        }
-        span.style.display = "inline-block";
-        element.appendChild(span);
-        return span;
-      });
-
-      gsap.fromTo(
-        chars,
-        {
-          opacity: 0,
-          x: -50,
-          immediateRender: false,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          stagger: 0.03,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 60%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-            invalidateOnRefresh: true,
-          },
-        }
-      );
-    });
 
     gsap.fromTo(
       containerRef.current,
@@ -92,7 +138,7 @@ function Heading({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -112,7 +158,41 @@ function Heading({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    const text = textRef.current.innerText;
+    const splitText = text
+      .split("")
+      .map((char) =>
+        char === " "
+          ? " "
+          : `<span class="accent-hed inline-block opacity-0">${char}</span>`
+      )
+      .join("");
+
+    textRef.current.innerHTML = splitText;
+
+    const chars = textRef.current.querySelectorAll(".accent-hed");
+
+    gsap.fromTo(
+      chars,
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.03,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -127,6 +207,7 @@ function Heading({
       )}
     >
       <p
+        ref={textRef}
         className={cn(
           "font-body font-medium uppercase text-sm accent-hed text-hover",
           dark && "text-white"

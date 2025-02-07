@@ -5,7 +5,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/shadcn/carousel";
-import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import Image from "next/image";
 
