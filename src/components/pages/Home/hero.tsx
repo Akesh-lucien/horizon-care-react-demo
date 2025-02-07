@@ -124,7 +124,7 @@ function HeroSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center space-y-10 space-x-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center space-y-0 space-x-0">
             <div className="col-span-1 max-w-[70%]">
               <FadingSlide delay={0.8}>
                 <SharedButton renderText="view services" />
@@ -156,6 +156,7 @@ function HeroSection() {
           </FadingSlide>
         </div>
       </div>
+      <FadingSlide delay={1.5} vertical>
       <Carousel className="mt-10 container px-8 md:px-0">
         <CarouselContent>
           {Array.from({ length: 6 }).map((_, i) => (
@@ -192,6 +193,7 @@ function HeroSection() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+      </FadingSlide>
     </section>
   );
 }

@@ -32,13 +32,14 @@ justo service visionary sources unleash online"
         </div>
         <div className="md:col-span-8 space-y-6 md:space-y-8 lg:space-y-12">
           {Array.from({ length: 3 }).map((_, i) => (
-            <BlogCard
-              key={i}
-              author="By Growhub"
-              date="November 28, 2023"
-              imageUrl="/images/benefits-1.webp"
-              title="Exploring the Full Spectrum of Digital Marketing’s…"
-            />
+            <FadingSlide key={i}>
+              <BlogCard
+                author="By Growhub"
+                date="November 28, 2023"
+                imageUrl="/images/benefits-1.webp"
+                title="Exploring the Full Spectrum of Digital Marketing’s…"
+              />
+            </FadingSlide>
           ))}
         </div>
       </div>

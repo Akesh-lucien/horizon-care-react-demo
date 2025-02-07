@@ -12,6 +12,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/shadcn/tabs";
+import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
 import { Check } from "lucide-react";
@@ -146,50 +147,55 @@ function MainServices() {
         </TabsList>
         {pricingTabs.map((tab) => (
           <TabsContent key={tab.title} value={tab.title}>
-            <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
-              {tab.packages.map((pkg) => (
-                <Card key={pkg.title} className="rounded-3xl p-4 md:p-6 bg-white">
-                  <CardHeader>
-                    <div className="mb-4">
-                      <Image
-                        src="/images/benefits-1.webp"
-                        alt="benefits-1"
-                        width={600}
-                        height={400}
-                        className="mx-auto rounded-2xl w-full h-48 md:h-56 lg:h-64 object-cover"
-                      />
-                    </div>
-                    <CardDescription className="font-body text-hover/50 text-sm md:text-base">
-                      {pkg.description}
-                    </CardDescription>
-                    <CardTitle className="font-heading font-semibold text-hover/80 text-3xl md:text-4xl">
-                      {pkg.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-3xl md:text-4xl font-heading font-extrabold">
-                      ${pkg.price}
-                      <span className="text-sm md:text-base font-medium text-muted-foreground ml-1">
-                        {pkg.frequency}
-                      </span>
-                    </div>
-                    <ul className="mt-4 md:mt-6 space-y-2 md:space-y-4">
-                      {pkg.features.map((feature) => (
-                        <li key={feature} className="flex items-center">
-                          <Check className="text-green-500 mr-2 h-4 w-4 md:h-5 md:w-5" />
-                          <span className="text-xs md:text-sm text-muted-foreground">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter className="w-full md:w-[80%]">
-                    <SharedButton renderText="start with this" />
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
+            <FadingSlide vertical>
+              <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+                {tab.packages.map((pkg) => (
+                  <Card
+                    key={pkg.title}
+                    className="rounded-3xl p-4 md:p-6 bg-white"
+                  >
+                    <CardHeader>
+                      <div className="mb-4">
+                        <Image
+                          src="/images/benefits-1.webp"
+                          alt="benefits-1"
+                          width={600}
+                          height={400}
+                          className="mx-auto rounded-2xl w-full h-48 md:h-56 lg:h-64 object-cover"
+                        />
+                      </div>
+                      <CardDescription className="font-body text-hover/50 text-sm md:text-base">
+                        {pkg.description}
+                      </CardDescription>
+                      <CardTitle className="font-heading font-semibold text-hover/80 text-3xl md:text-4xl">
+                        {pkg.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="text-3xl md:text-4xl font-heading font-extrabold">
+                        ${pkg.price}
+                        <span className="text-sm md:text-base font-medium text-muted-foreground ml-1">
+                          {pkg.frequency}
+                        </span>
+                      </div>
+                      <ul className="mt-4 md:mt-6 space-y-2 md:space-y-4">
+                        {pkg.features.map((feature) => (
+                          <li key={feature} className="flex items-center">
+                            <Check className="text-green-500 mr-2 h-4 w-4 md:h-5 md:w-5" />
+                            <span className="text-xs md:text-sm text-muted-foreground">
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <CardFooter className="w-full md:w-[80%]">
+                      <SharedButton renderText="start with this" />
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+            </FadingSlide>
           </TabsContent>
         ))}
       </Tabs>

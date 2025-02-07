@@ -1,3 +1,4 @@
+import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
 import React from "react";
@@ -50,7 +51,9 @@ function RecentBlogs() {
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {blogPosts.map((blogData) => (
-          <BlogCard key={blogData.title} {...blogData} />
+          <FadingSlide key={blogData.title}>
+            <BlogCard key={blogData.title} {...blogData} />
+          </FadingSlide>
         ))}
       </div>
     </section>

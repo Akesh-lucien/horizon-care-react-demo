@@ -9,9 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 interface FadingSlideProps {
   children: React.ReactNode;
   delay?: number;
+  vertical?: boolean;
 }
 
-function FadingSlide({ children, delay }: FadingSlideProps) {
+function FadingSlide({ children, delay, vertical }: FadingSlideProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -41,11 +42,13 @@ function FadingSlide({ children, delay }: FadingSlideProps) {
     gsap.fromTo(
       overlayRef.current,
       {
-        x: 0,
+        x: vertical ? 0 : 0,
+        y: vertical ? 0 : 0,
       },
       {
-        x: 900,
-        duration: 2,
+        x: vertical ? 0 : 900,
+        y: vertical ? 900 : 0,
+        duration: vertical ? 3 : 2,
         ease: "power1",
         delay: delay,
         scrollTrigger: {

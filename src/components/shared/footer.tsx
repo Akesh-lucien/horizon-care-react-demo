@@ -1,6 +1,7 @@
 "use client";
 
 import { footerData } from "@/constants/data/index";
+import FadingSlide from "./fadingSlide";
 
 function Footer() {
   const { company } = footerData;

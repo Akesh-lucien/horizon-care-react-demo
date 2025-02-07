@@ -43,7 +43,9 @@ function ContactPageHeroSection() {
             subhead="Thank you for your interest in Attach Web Agency. We're excited to hear from you."
           />
           {contactDetails.map((contact) => (
-            <ContactInfoCard key={contact.method} {...contact} />
+            <FadingSlide key={contact.method}>
+              <ContactInfoCard {...contact} />
+            </FadingSlide>
           ))}
         </div>
         <div className="col-span-12 md:col-span-7">

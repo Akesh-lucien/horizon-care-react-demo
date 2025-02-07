@@ -4,13 +4,12 @@ import { blogData } from "@/constants/data/index";
 import { Input } from "@/components/shadcn/input";
 import SharedButton from "@/components/shared/sharedButton";
 import RecentBlogCard from "./recent-blog-card";
+import FadingSlide from "@/components/shared/fadingSlide";
 
 function BlogPageHeroSection() {
   const singleBlog = blogData[0];
-  const [] = useState("");
   return (
     <section className="">
-      {/* Hero Section - Responsive height and text sizing */}
       <div className="flex flex-col items-center justify-center gap-0 space-y-4 md:space-y-6 bg-cover bg-no-repeat h-[20vh] md:h-[60vh] bg-[url('/images/services-hero.jpeg')]">
         <h1 className="font-heading font-bold capitalize text-4xl sm:text-5xl md:text-7xl text-white text-center px-4">
           Blog
@@ -20,49 +19,46 @@ function BlogPageHeroSection() {
         </p>
       </div>
 
-      {/* Main Content - Stack on mobile, grid on desktop */}
       <div className="container grid grid-cols-1 md:grid-cols-12 items-start gap-4 md:gap-8 py-6 md:py-12 px-4 sm:px-6">
-        {/* Main Blog Posts - Full width on mobile, 2/3 on desktop */}
         <div className="md:col-span-8 space-y-6 md:space-y-8">
           {Array.from({ length: 4 }).map((_, i) => (
             <MainBlogCard key={i} {...singleBlog} />
           ))}
         </div>
 
-        {/* Sidebar - Full width on mobile, 1/3 on desktop */}
         <div className="md:col-span-4 space-y-6 md:space-y-8">
-          {/* Search Form - Responsive sizing */}
-          <form className="flex items-center w-full border border-black rounded-full overflow-hidden">
-            <Input
-              className="border-none rounded-full flex-1 text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
-              type="text"
-              placeholder="Search..."
-            />
-            <div className="w-[50%]">
-              <SharedButton renderText="search" />
-            </div>
-          </form>
+          <FadingSlide vertical>
+            <form className="flex items-center w-full border border-black rounded-full overflow-hidden">
+              <Input
+                className="border-none rounded-full flex-1 text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
+                type="text"
+                placeholder="Search..."
+              />
+              <div className="w-[50%]">
+                <SharedButton renderText="search" />
+              </div>
+            </form>
+          </FadingSlide>
 
-          {/* Recent Blogs Section - Responsive padding and spacing */}
           <div className="space-y-6 md:space-y-8">
             <div className="p-4 md:p-6 lg:p-8 bg-gray-300/30 rounded-xl lg:rounded-2xl space-y-4 md:space-y-6">
               <h3 className="capitalize font-heading font-medium text-xl md:text-2xl text-hover">
                 Recent Blogs
               </h3>
               {Array.from({ length: 4 }).map((_, i) => (
-                <RecentBlogCard
-                  key={i}
-                  author="oreo"
-                  category="respiratory care"
-                  date="jan 1"
-                  description="lorem"
-                  imageUrl="/images/benefits-1.webp"
-                  title="Exploring the Full Spectrum of…"
-                />
+                <FadingSlide key={i}>
+                  <RecentBlogCard
+                    author="oreo"
+                    category="respiratory care"
+                    date="jan 1"
+                    description="lorem"
+                    imageUrl="/images/benefits-1.webp"
+                    title="Exploring the Full Spectrum of…"
+                  />
+                </FadingSlide>
               ))}
             </div>
 
-            {/* Tags Section - Responsive grid and spacing */}
             <div className="p-4 md:p-6 lg:p-8 bg-gray-300/30 rounded-xl lg:rounded-2xl space-y-4 md:space-y-6">
               <h3 className="capitalize font-heading font-medium text-xl md:text-2xl text-hover">
                 Tags

@@ -1,3 +1,4 @@
+import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import { UserCircle } from "lucide-react";
 import React from "react";
@@ -36,7 +37,9 @@ function WhyChooseUs() {
           heading2="learn about your money."
         />
         {whyChooseCardsData.map((data) => (
-          <WhyChooseCard key={data.title} {...data} />
+          <FadingSlide key={data.title}>
+            <WhyChooseCard {...data} />
+          </FadingSlide>
         ))}
       </div>
     </section>
