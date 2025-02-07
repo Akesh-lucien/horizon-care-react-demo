@@ -21,7 +21,6 @@ function ContactSection() {
                     placeholder="Your Name"
                     className="w-full px-4 pl-10 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary font-body text-sm md:text-base"
                   />
-                  {/* SVG icon remains same */}
                 </div>
 
                 <div className="relative">
@@ -30,15 +29,12 @@ function ContactSection() {
                     placeholder="Email Address"
                     className="w-full px-4 pl-10 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary font-body text-sm md:text-base"
                   />
-                  {/* SVG icon remains same */}
                 </div>
               </div>
 
               <div className="relative">
                 <select className="w-full px-4 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary appearance-none font-body text-sm md:text-base">
-                  {/* Options remain same */}
                 </select>
-                {/* SVG icon remains same */}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -64,7 +60,6 @@ function ContactSection() {
                     placeholder="Enter message"
                     className="w-full px-4 pl-10 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary font-body text-sm md:text-base"
                   />
-                  {/* SVG icon remains same */}
                 </div>
                 <FadingSlide delay={1}>
                   <div className="w-full md:w-[50%]">

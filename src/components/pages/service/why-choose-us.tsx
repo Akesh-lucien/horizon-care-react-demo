@@ -50,12 +50,10 @@ const WhyChooseCard = React.memo(({ title, description }: WhyChooseProps) => {
   return (
     <div className="bg-gray-100 drop-shadow-lg p-4 md:p-6 lg:p-8 w-full rounded-xl lg:rounded-2xl">
       <div className="flex items-start gap-4 md:gap-6">
-        {/* Circle with Icon - Responsive sizing */}
         <div className="bg-[#E5EEEE] w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center flex-shrink-0">
           <UserCircle className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
         </div>
 
-        {/* Text Content - Responsive typography */}
         <div className="flex flex-col">
           <h2 className="text-[#1B4B43] text-xl md:text-2xl lg:text-3xl font-heading font-medium mb-2 md:mb-3">
             {title}

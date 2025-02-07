@@ -79,7 +79,7 @@ const BlogCard = React.memo(
         </div>
 
         <div className="p-6 bg-gray-50">
-          {/* Author and Date */}
+          {/* Author */}
           <div className="flex items-center gap-2 font-body uppercase text-gray-600 text-sm mb-3">
             <span>BY {author}</span>
             <span>•</span>

@@ -57,7 +57,6 @@ function ContactPageHeroSection() {
                   placeholder="Your Name"
                   className="w-full px-4 pl-10 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary font-body text-sm md:text-base"
                 />
-                {/* ... icon remains same ... */}
               </div>
 
               <div className="relative">
@@ -66,16 +65,13 @@ function ContactPageHeroSection() {
                   placeholder="Email Address"
                   className="w-full px-4 pl-10 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary font-body text-sm md:text-base"
                 />
-                {/* ... icon remains same ... */}
               </div>
             </div>
 
             <div className="relative">
               <select className="w-full px-4 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary appearance-none font-body text-sm md:text-base">
                 <option value="">Select Service</option>
-                {/* ... options remain same ... */}
               </select>
-              {/* ... chevron icon ... */}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -101,7 +97,6 @@ function ContactPageHeroSection() {
                   rows={4}
                   className="w-full px-4 pl-10 py-2 md:py-3 bg-white/90 rounded-3xl border border-gray-200 focus:outline-none focus:border-primary font-body text-sm md:text-base"
                 />
-                {/* ... message icon ... */}
               </div>
 
               <FadingSlide>

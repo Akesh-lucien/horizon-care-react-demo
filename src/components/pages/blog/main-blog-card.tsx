@@ -26,7 +26,6 @@ function MainBlogCard({
 
       {/* Content Section */}
       <div className="py-6 px-12 space-y-4">
-        {/* Meta Information */}
         <div className="flex items-center space-x-6 text-gray-600 text-sm">
           <div className="flex items-center space-x-2">
             <User size={16} />
@@ -54,7 +53,7 @@ function MainBlogCard({
           {description}
         </p>
 
-        {/* Read More Link */}
+        {/* Read More */}
         <div>
           <Link
             href="#"
