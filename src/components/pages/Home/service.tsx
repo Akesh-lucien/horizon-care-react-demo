@@ -44,7 +44,7 @@ function ServiceSection() {
           </FadingSlide>
         </div>
         {/*section2*/}
-        <div className="col-span-1 grid grid-cols-1 xs:grid-cols-2 gap-4 md:gap-6">
+        <div className="col-span-1 grid grid-cols-2 xs:grid-cols-2 gap-4 md:gap-6">
           {Array.from({ length: 4 }).map((_, i) => (
             <HoverCard key={i} />
           ))}

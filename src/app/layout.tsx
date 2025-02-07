@@ -3,6 +3,7 @@ import { Crimson_Pro, Geist, Geist_Mono, Onest } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
+import { Lenis } from "@/lib/lenis/lenis-config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${crimSonPro.variable} ${onest.variable} antialiased`}
       >
+        <Lenis options={{ lerp: 0.15 }} />
         <Header />
         {children}
         <Footer />

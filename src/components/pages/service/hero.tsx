@@ -56,15 +56,15 @@ const services: ServiceProps[] = [
 function ServicePageHeroSection() {
   return (
     <section>
-      <div className="flex flex-col items-center justify-center gap-0 bg-cover bg-no-repeat h-[60vh] bg-[url('/images/services-hero.jpeg')]">
-        <h1 className="font-heading font-bold capitalize text-7xl text-white">
+      <div className="flex flex-col items-center justify-center gap-0 bg-cover bg-no-repeat h-[20vh] md:h-[50vh] bg-[url('/images/services-hero.jpeg')]">
+        <h1 className="font-heading font-bold capitalize text-4xl sm:text-7xl text-white">
           Services
         </h1>
         <p className="font-body font-medium capitalize text-white/80">
           Horizon care &gt; services
         </p>
       </div>
-      <div className="grid grid-cols-2 items-center gap-8 container py-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-8 container py-16">
         {services.map((service) => (
           <ServiceCard key={service.id} {...service} />
         ))}
@@ -75,28 +75,28 @@ function ServicePageHeroSection() {
 
 const ServiceCard = React.memo(({ title, description, link }: ServiceProps) => {
   return (
-    <div className="p-8 rounded-[32px] cursor-pointer border-black/10 border hover:border-black transition-all duration-700 bg-white">
-      <div className="flex items-start gap-6">
-        <div className="bg-[#F5F9F9] w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">
+    <div className="p-6 sm:p-8 rounded-[32px] cursor-pointer border-black/10 border hover:border-black transition-all duration-700 bg-white">
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+        <div className="bg-[#F5F9F9] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0">
           <ComputerIcon />
         </div>
 
-        <div className="flex flex-col gap-2">
-          <h2 className="text-[#1B4B43] text-3xl font-heading font-medium">
+        <div className="flex flex-col gap-1 sm:gap-2">
+          <h2 className="text-[#1B4B43] text-2xl sm:text-3xl font-heading font-medium">
             {title}
           </h2>
 
-          <p className="text-[#6F777F] text-lg font-body font-normal">
+          <p className="text-[#6F777F] text-base sm:text-lg font-body font-normal">
             {description}
           </p>
 
           <a
             href={link}
-            className="inline-flex items-center text-[#1B4B43] font-heading font-semibold mt-3"
+            className="inline-flex items-center text-[#1B4B43] font-heading font-semibold mt-2 sm:mt-3"
           >
             Read More
             <svg
-              className="ml-2 w-5 h-5"
+              className="ml-2 w-4 h-4 sm:w-5 sm:h-5"
               viewBox="0 0 20 20"
               fill="none"
               stroke="currentColor"

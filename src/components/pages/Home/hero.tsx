@@ -6,7 +6,6 @@ import {
   CarouselPrevious,
 } from "@/components/shadcn/carousel";
 import FadingSlide from "@/components/shared/fadingSlide";
-import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
 import { useGSAP } from "@gsap/react";
 import { PhoneCallIcon } from "lucide-react";
@@ -30,7 +29,7 @@ function HeroSection() {
     )
       return;
 
-    const textElements = document.querySelectorAll(".accent-hed");
+    const textElements = document.querySelectorAll(".accent-heading");
 
     textElements.forEach((element) => {
       // Split text into individual characters
@@ -102,7 +101,7 @@ function HeroSection() {
             ref={containerRef}
             className={cn("col-span-1 py-0 space-y-0 opacity-0")}
           >
-            <p className="font-body font-semibold uppercase text-sm accent-hed">
+            <p className="font-body font-semibold uppercase text-sm accent-heading">
               New Opportunities Makes Company Growth
             </p>
             <h2

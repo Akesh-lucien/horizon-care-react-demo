@@ -18,7 +18,7 @@ function TestimonialsSection() {
           <Carousel className="w-full">
             <CarouselContent>
               {Array.from({ length: 3 }).map((_, index) => (
-                <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="basis-full">
                   <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-10 p-2 md:p-4">
                     <div className="w-full md:w-1/3 max-w-xs md:max-w-none">
                       <Image

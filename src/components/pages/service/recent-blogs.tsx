@@ -42,13 +42,13 @@ const blogPosts: BlogPostCardProps[] = [
 
 function RecentBlogs() {
   return (
-    <section className="py-12 space-y-8 container">
+    <section className="py-8 md:py-12 space-y-6 md:space-y-8 container md:px-0 px-8">
       <Heading
         accent="Latest News Update"
         heading1="Everything about the business"
         heading2="world in one place."
       />
-      <div className="grid grid-cols-3 items-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {blogPosts.map((blogData) => (
           <BlogCard key={blogData.title} {...blogData} />
         ))}

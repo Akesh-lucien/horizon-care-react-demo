@@ -15,7 +15,7 @@ function OurGallery() {
       <div className="container mx-auto max-w-7xl">
         <Carousel className="mx-auto mt-8 md:mt-12">
           <CarouselContent>
-            {Array.from({ length: 3 }).map((_, index) => (
+            {Array.from({ length: 6 }).map((_, index) => (
               <CarouselItem 
                 key={index} 
                 className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
