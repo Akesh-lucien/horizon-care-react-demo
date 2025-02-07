@@ -3,8 +3,14 @@
 import React from "react";
 import Link from "next/link";
 import SharedButton from "./sharedButton";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
 import FadingSlide from "./fadingSlide";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTrigger,
+} from "../shadcn/drawer";
 
 type NavLink = {
   id: number;
@@ -60,14 +66,44 @@ function Header() {
                 </Link>
               ))}
           </nav>
-          <div className="w-[20%]">
+          <div className="w-[20%] hidden md:block">
             <FadingSlide>
               <SharedButton renderText="get started" />
             </FadingSlide>
           </div>
-          <div className="grid grid-cols-1 items-center bg-primary/10 rounded-full p-4">
-            <MenuIcon size={20} />
-          </div>
+
+          <Drawer direction="right">
+            <DrawerTrigger className="md:hidden grid grid-cols-1 items-center bg-primary/10 rounded-full p-4">
+              <MenuIcon size={20} />
+            </DrawerTrigger>
+            <DrawerContent className="h-full w-[80%] ml-auto rounded-l-lg bg-white">
+              <div className="p-6 space-y-8">
+                <div className="flex justify-between items-center">
+                  <span className="font-heading text-2xl">Horizon Care</span>
+                  <DrawerClose className="p-2 rounded-full hover:bg-gray-100">
+                    <XIcon size={20} />
+                  </DrawerClose>
+                </div>
+
+                <nav className="flex flex-col gap-6">
+                  {navLinks.map((nav) => (
+                    <DrawerClose key={nav.id} asChild>
+                      <Link
+                        href={nav.href}
+                        className="font-body text-lg font-semibold text-hover hover:text-primary transition-colors"
+                      >
+                        {nav.title}
+                      </Link>
+                    </DrawerClose>
+                  ))}
+                </nav>
+
+                <div className="mt-8">
+                  <SharedButton renderText="get started" />
+                </div>
+              </div>
+            </DrawerContent>
+          </Drawer>
         </div>
       </div>
     </header>

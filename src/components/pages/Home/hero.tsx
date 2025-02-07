@@ -94,8 +94,8 @@ function HeroSection() {
     );
   }, []);
   return (
-    <section className="bg-offwhitebg">
-      <div className="container grid grid-cols-2 items-center gap-0">
+    <section className="bg-offwhitebg px-8 md:px-0">
+      <div className="container grid grid-cols-1 md:grid-cols-2 items-center  gap-0">
         {/*section 1*/}
         <div className="col-span-1 py-12 space-y-6">
           <div
@@ -107,13 +107,13 @@ function HeroSection() {
             </p>
             <h2
               ref={headRef}
-              className="font-heading font-medium capitalize text-7xl text-hover pt-4"
+              className="font-heading font-medium capitalize text-5xl md:text-7xl text-hover pt-4"
             >
               Get a Smart Way For
             </h2>
             <h1
               ref={headRef1}
-              className="font-heading italic font-medium capitalize text-7xl text-hover underline pb-4"
+              className="font-heading italic font-medium capitalize text-5xl md:text-7xl text-hover underline pb-4"
             >
               Safety Insurance
             </h1>
@@ -125,7 +125,7 @@ function HeroSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 items-center space-x-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center space-y-10 space-x-0">
             <div className="col-span-1 max-w-[70%]">
               <FadingSlide delay={0.8}>
                 <SharedButton renderText="view services" />
@@ -157,7 +157,7 @@ function HeroSection() {
           </FadingSlide>
         </div>
       </div>
-      <Carousel className="mt-10 container">
+      <Carousel className="mt-10 container px-8 md:px-0">
         <CarouselContent>
           {Array.from({ length: 6 }).map((_, i) => (
             <CarouselItem key={i} className="md:basis-1/3">

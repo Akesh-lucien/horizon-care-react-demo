@@ -13,9 +13,9 @@ interface BlogCardProps {
 
 function FeaturedBlogs() {
   return (
-    <section>
-      <div className="container grid grid-cols-12 items-start space-x-12 py-16">
-        <div className="col-span-4 space-y-8">
+    <section className="px-4 sm:px-6 md:px-8">
+      <div className="container grid grid-cols-1 md:grid-cols-12 items-start gap-y-8 md:gap-x-12 py-8 md:py-16">
+        <div className="md:col-span-4 space-y-6 lg:space-y-8">
           <Heading
             accent="Featured This Week"
             heading1="Most Reliable Insures"
@@ -25,12 +25,12 @@ imperdiet vivamus est aliquam euismod nector quam convallis ornare
 justo service visionary sources unleash online"
           />
           <FadingSlide>
-            <div className="w-[50%]">
+            <div className="w-full md:w-1/2 lg:w-[50%]">
               <SharedButton renderText="read more" />
             </div>
           </FadingSlide>
         </div>
-        <div className="col-span-8 space-y-12">
+        <div className="md:col-span-8 space-y-6 md:space-y-8 lg:space-y-12">
           {Array.from({ length: 3 }).map((_, i) => (
             <BlogCard
               key={i}
@@ -71,7 +71,7 @@ const BlogCard = React.memo(
             {title}
           </h2>
 
-          <div className="mt-auto w-[40%]">
+          <div className="mt-auto w-[50%] md:w-[40%]">
             <SharedButton renderText="read more" />
           </div>
         </div>
