@@ -2,29 +2,8 @@ import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import { UserCircle } from "lucide-react";
 import React from "react";
-
-interface WhyChooseProps {
-  title: string;
-  description: string;
-}
-
-const whyChooseCardsData: WhyChooseProps[] = [
-  {
-    title: "Best Business Consulting",
-    description:
-      "Fusce condimentum mattis placerat odio donec lacus porta torq uent, mauris gravida rutrum.",
-  },
-  {
-    title: "24/7 Customer Support",
-    description:
-      "Placerat condimentum mattis odio donec lacus porta torq uent, mauris gravida rutrum Fusce.",
-  },
-  {
-    title: "Professional Team Members",
-    description:
-      "Mattis Placerat condimentum odio donec lacus porta torq uent, mauris gravida rutrum Fusce.",
-  },
-];
+import { whyChooseCardsData } from "@/constants/data";
+import { WhyChooseProps } from "@/types";
 
 function WhyChooseUs() {
   return (

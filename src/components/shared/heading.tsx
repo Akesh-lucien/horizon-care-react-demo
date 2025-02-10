@@ -145,7 +145,7 @@ function Heading({
     gsap.fromTo(
       [headRef.current, headRef1.current, subHedRef.current],
       {
-        rotateX: 50,
+        rotateX: 60,
         y: 30,
       },
       {

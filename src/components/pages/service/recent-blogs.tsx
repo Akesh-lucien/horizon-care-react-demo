@@ -2,44 +2,8 @@ import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
 import React from "react";
-
-interface BlogPostCardProps {
-  category: string;
-  author: string;
-  date: string;
-  title: string;
-  imageUrl: string;
-  slug: string;
-}
-
-const blogPosts: BlogPostCardProps[] = [
-  {
-    category: "Business",
-    author: "GrowHub",
-    date: "November 28, 2023",
-    title:
-      "Exploring the Full Spectrum of Digital Marketing’s Influence and Impact in the...",
-    imageUrl: "/images/digital-marketing.jpg",
-    slug: "exploring-digital-marketing-influence",
-  },
-  {
-    category: "Meeting",
-    author: "GrowHub",
-    date: "November 28, 2023",
-    title: "Delivering Memorable and Building Brand the Company Loyalty Zone",
-    imageUrl: "/images/brand-loyalty.jpg",
-    slug: "building-brand-loyalty-zone",
-  },
-  {
-    category: "Projects",
-    author: "GrowHub",
-    date: "November 28, 2023",
-    title:
-      "Mastery of Creative Problem Solving in Your Startup Office Business Plan",
-    imageUrl: "/images/startup-office.jpg",
-    slug: "creative-problem-solving-startup",
-  },
-];
+import { blogPosts } from "@/constants/data";
+import { BlogPostCardProps } from "@/types/index";
 
 function RecentBlogs() {
   return (

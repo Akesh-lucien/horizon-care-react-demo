@@ -1,57 +1,10 @@
 import { ComputerIcon } from "lucide-react";
-import React from "react";
-
-type ServiceProps = {
-  id: number;
-  title: string;
-  description: string;
-  link: string;
-};
-
-const services: ServiceProps[] = [
-  {
-    id: 1,
-    title: "Consulting Services",
-    description:
-      "This strategy encompasses a wide range of from online marketing and social media to website.",
-    link: "/consulting-services",
-  },
-  {
-    id: 2,
-    title: "Digital Solution",
-    description:
-      "This approach allows businesses and individuals to have a website that aligns with their brand.",
-    link: "/digital-solution",
-  },
-  {
-    id: 3,
-    title: "Financial Consultancy",
-    description:
-      "Wireframes are basic, low-fidelity visual of website or app's layout and structure Strategy.",
-    link: "/financial-consultancy",
-  },
-  {
-    id: 4,
-    title: "Business Strategy",
-    description:
-      "Content creation and integration is a pivotal aspect of web design and Solutions Agency.",
-    link: "/business-strategy",
-  },
-  {
-    id: 5,
-    title: "Investment Advisory",
-    description:
-      "Content creation and integration is a pivotal aspect of web design Solutions Agency.",
-    link: "/investment-advisory",
-  },
-  {
-    id: 6,
-    title: "Digital Planning",
-    description:
-      "Integration content creation and is a pivotal aspect of web development sector and part.",
-    link: "/digital-planning",
-  },
-];
+import React, { useRef, useState } from "react";
+import { services } from "@/constants/data/index";
+import { ServiceProps } from "@/types";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SharedButton from "@/components/shared/sharedButton";
 
 function ServicePageHeroSection() {
   return (
@@ -74,11 +27,53 @@ function ServicePageHeroSection() {
 }
 
 const ServiceCard = React.memo(({ title, description, link }: ServiceProps) => {
+  const circleRef = useRef<HTMLDivElement | null>(null);
+  const tlRef = useRef<gsap.core.Timeline | null>(null);
+  const [hovered, setHovered] = useState<boolean>(false);
+  useGSAP(() => {
+    if (!circleRef) return;
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(
+      circleRef.current,
+      {
+        opacity: 1,
+        scale: 0,
+      },
+      {
+        scale: 4,
+        opacity: 1,
+        ease: "power1",
+        duration: 0.4,
+      }
+    );
+    tlRef.current = tl;
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+  const handleMouseEnter = () => {
+    tlRef?.current?.play();
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    tlRef?.current?.reverse();
+    setHovered(false);
+  };
   return (
-    <div className="p-6 sm:p-8 rounded-[32px] cursor-pointer border-black/10 border hover:border-black transition-all duration-700 bg-white">
-      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-        <div className="bg-[#F5F9F9] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0">
-          <ComputerIcon />
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="p-6 relative overflow-hidden sm:p-8 rounded-[32px] cursor-pointer border-black/10 border hover:border-black transition-all duration-700 bg-white"
+    >
+      <div
+        ref={circleRef}
+        className="absolute opacity-0 z-0 blur-md bg-gradient-to-tr from-primary/70 to-primary/10 rounded-full -top-5 -left-0 h-[32px] w-[32px]"
+      ></div>
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 z-10">
+        <div className="bg-[#F5F9F9] sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0">
+          <ComputerIcon size={38} />
         </div>
 
         <div className="flex flex-col gap-1 sm:gap-2">
@@ -90,25 +85,9 @@ const ServiceCard = React.memo(({ title, description, link }: ServiceProps) => {
             {description}
           </p>
 
-          <a
-            href={link}
-            className="inline-flex items-center text-[#1B4B43] font-heading font-semibold mt-2 sm:mt-3"
-          >
-            Read More
-            <svg
-              className="ml-2 w-4 h-4 sm:w-5 sm:h-5"
-              viewBox="0 0 20 20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path
-                d="M4 10h12M12 6l4 4-4 4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
+         <div className="max-w-48 mt-5">
+          <SharedButton renderText="read more" />
+         </div>
         </div>
       </div>
     </div>

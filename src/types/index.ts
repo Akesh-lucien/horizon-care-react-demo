@@ -43,3 +43,61 @@ export interface BlogCardProps {
 }
 
 // blogs types end
+
+// faq types start
+export type FAQItem = {
+  id: string;
+  question: string;
+  answer: string;
+};
+// faq types end
+
+// pricing types start
+type Package = {
+  title: string;
+  price: number;
+  frequency: string;
+  description: string;
+  features: string[];
+  isRecommended?: boolean;
+};
+
+export type PricingTab = {
+  title: string;
+  packages: Package[];
+};
+// pricing types end
+
+// pricing types start
+export type ServiceProps = {
+  id: number;
+  title: string;
+  description: string;
+  link: string;
+};
+// pricing types end
+
+// blog types start
+export interface BlogPostCardProps {
+  category: string;
+  author: string;
+  date: string;
+  title: string;
+  imageUrl: string;
+  slug: string;
+}
+// blog types end
+
+// why choose us types end
+export interface WhyChooseProps {
+  title: string;
+  description: string;
+}
+// why choose us types end
+
+// contact us types start
+export type ContactInfoProps = {
+  method: string;
+  message: string;
+};
+// contact us types start

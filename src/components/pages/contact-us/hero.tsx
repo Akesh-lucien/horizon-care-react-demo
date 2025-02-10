@@ -3,26 +3,8 @@ import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
 import { Contact2Icon, Headphones } from "lucide-react";
 import React from "react";
-
-type ContactInfoProps = {
-  method: string;
-  message: string;
-};
-
-const contactDetails: ContactInfoProps[] = [
-  {
-    method: "+1 (555) 123-4567",
-    message: "Call us directly",
-  },
-  {
-    method: "support@horizoncare.com",
-    message: "Send us an email",
-  },
-  {
-    method: "Mon - Fri, 9am - 6pm EST",
-    message: "Working hours",
-  },
-];
+import { contactDetails } from "@/constants/data/index";
+import { ContactInfoProps } from "@/types/index";
 
 function ContactPageHeroSection() {
   return (

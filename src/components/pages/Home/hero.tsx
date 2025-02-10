@@ -79,7 +79,7 @@ function HeroSection() {
     gsap.fromTo(
       [headRef.current, headRef1.current, subHedRef.current],
       {
-        rotateX: 50,
+        rotateX: 70,
         y: 30,
         scale: 0.9,
       },
