@@ -5,6 +5,7 @@ import { ServiceProps } from "@/types";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import SharedButton from "@/components/shared/sharedButton";
+import FadingSlide from "@/components/shared/fadingSlide";
 
 function ServicePageHeroSection() {
   return (
@@ -19,7 +20,9 @@ function ServicePageHeroSection() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-8 container py-16">
         {services.map((service) => (
-          <ServiceCard key={service.id} {...service} />
+          <FadingSlide key={service.id} delay={0} duration={0.5}>
+            <ServiceCard {...service} />
+          </FadingSlide>
         ))}
       </div>
     </section>
@@ -85,9 +88,9 @@ const ServiceCard = React.memo(({ title, description, link }: ServiceProps) => {
             {description}
           </p>
 
-         <div className="max-w-48 mt-5">
-          <SharedButton renderText="read more" />
-         </div>
+          <div className="max-w-48 mt-5">
+            <SharedButton renderText="read more" />
+          </div>
         </div>
       </div>
     </div>

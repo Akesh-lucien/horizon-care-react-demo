@@ -10,9 +10,15 @@ interface FadingSlideProps {
   children: React.ReactNode;
   delay?: number;
   vertical?: boolean;
+  duration?: number;
 }
 
-function FadingSlide({ children, delay, vertical }: FadingSlideProps) {
+function FadingSlide({
+  children,
+  delay,
+  vertical,
+  duration,
+}: FadingSlideProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -48,7 +54,7 @@ function FadingSlide({ children, delay, vertical }: FadingSlideProps) {
       {
         x: vertical ? 0 : 900,
         y: vertical ? 900 : 0,
-        duration: vertical ? 3 : 2,
+        duration: duration ? duration : 2,
         ease: "power1",
         delay: delay,
         scrollTrigger: {

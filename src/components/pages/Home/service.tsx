@@ -1,9 +1,11 @@
 import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
+import { useGSAP } from "@gsap/react";
 import { LightbulbIcon } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
 
 function ServiceSection() {
   return (
@@ -44,7 +46,7 @@ function ServiceSection() {
           </FadingSlide>
         </div>
         {/*section2*/}
-        <div className="col-span-1 grid grid-cols-2 xs:grid-cols-2 gap-4 md:gap-6">
+        <div className="col-span-1 grid grid-cols-2 xs:grid-cols-2 gap-4 md:gap-12">
           {Array.from({ length: 4 }).map((_, i) => (
             <FadingSlide key={i}>
               <HoverCard />
@@ -57,10 +59,51 @@ function ServiceSection() {
 }
 
 const HoverCard = React.memo(() => {
+  const iconRef = useRef<HTMLDivElement | null>(null);
+  const tlRef = useRef<gsap.core.Timeline | null>(null);
+  const [hovered, setHovered] = useState<boolean>(false);
+  useGSAP(() => {
+    if (!iconRef) return;
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(
+      iconRef.current,
+      {
+        opacity: 1,
+      },
+      {
+        rotateY: 180,
+        background: "#0c6460",
+        opacity: 1,
+        ease: "none",
+        duration: 0.4,
+      }
+    );
+    tlRef.current = tl;
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+  const handleMouseEnter = () => {
+    tlRef?.current?.play();
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    tlRef?.current?.reverse();
+    setHovered(false);
+  };
   return (
-    <div className="flex flex-col space-y-8 items-center justify-center rounded-xl drop-shadow-xl bg-white/90 px-5 py-12">
-      <div>
-        <LightbulbIcon size={64} />
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="flex flex-col flex-grow transition-all duration-500 cursor-pointer space-y-8 items-center justify-center hover:border-t-4 border-primary rounded-xl drop-shadow-xl bg-white/90 px-5 py-12"
+    >
+      <div
+        ref={iconRef}
+        className="rounded-full h-24 w-24 bg-primary/10 flex items-center justify-center"
+      >
+        <LightbulbIcon size={64} color={hovered ? "#fafafa" : "black"} />
       </div>
       <h3 className="font-heading font-medium text-primary text-2xl capitalize mt-3">
         SafeGuard Assurance
