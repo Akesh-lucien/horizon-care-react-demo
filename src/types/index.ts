@@ -58,6 +58,7 @@ type Package = {
   price: number;
   frequency: string;
   description: string;
+  img: string;
   features: string[];
   isRecommended?: boolean;
 };
@@ -101,3 +102,23 @@ export type ContactInfoProps = {
   message: string;
 };
 // contact us types start
+// progress types start
+export interface ProgressBarProps {
+  label: string;
+  percentage: number;
+}
+// progress types end
+
+// gallery types start
+export type galleryProps = {
+  img: string;
+};
+// gallery types start
+// featured blogs types start
+export interface FeaturedBlogCardProps {
+  title: string;
+  author: string;
+  date: string;
+  imageUrl: string;
+}
+// featured blogs types end

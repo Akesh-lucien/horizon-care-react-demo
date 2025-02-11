@@ -52,7 +52,7 @@ function MainServices() {
                     <CardHeader>
                       <div className="mb-4">
                         <Image
-                          src="/images/benefits-1.webp"
+                          src={pkg.img}
                           alt="benefits-1"
                           width={600}
                           height={400}

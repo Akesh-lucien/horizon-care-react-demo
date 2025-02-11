@@ -7,6 +7,9 @@ import {
   BlogPostCardProps,
   WhyChooseProps,
   ContactInfoProps,
+  ProgressBarProps,
+  galleryProps,
+  FeaturedBlogCardProps,
 } from "@/types/index";
 
 // footer data start
@@ -175,6 +178,7 @@ export const pricingTabs: PricingTab[] = [
         price: 29,
         frequency: "/month",
         description: "Perfect for individual needs",
+        img: "/images/serivice-img-1.webp",
         features: [
           "Basic feature set",
           "24/7 email support",
@@ -187,6 +191,7 @@ export const pricingTabs: PricingTab[] = [
         price: 59,
         frequency: "/month",
         description: "Ideal for growing businesses",
+        img: "/images/serivice-img-2.webp",
         features: [
           "Advanced features",
           "Priority email/chat support",
@@ -200,6 +205,7 @@ export const pricingTabs: PricingTab[] = [
         price: 99,
         frequency: "/month",
         description: "For large organizations",
+        img: "/images/serivice-img-3.webp",
         features: [
           "Full feature access",
           "24/7 phone support",
@@ -218,6 +224,7 @@ export const pricingTabs: PricingTab[] = [
         price: 260,
         frequency: "/year",
         description: "Perfect for individual needs",
+        img: "/images/serivice-img-2.webp",
         features: [
           "Basic feature set",
           "24/7 email support",
@@ -231,6 +238,7 @@ export const pricingTabs: PricingTab[] = [
         price: 520,
         frequency: "/year",
         description: "Ideal for growing businesses",
+        img: "/images/serivice-img-1.webp",
         features: [
           "Advanced features",
           "Priority email/chat support",
@@ -245,6 +253,7 @@ export const pricingTabs: PricingTab[] = [
         price: 890,
         frequency: "/year",
         description: "For large organizations",
+        img: "/images/serivice-img-3.webp",
         features: [
           "Full feature access",
           "24/7 phone support",
@@ -374,3 +383,68 @@ export const contactDetails: ContactInfoProps[] = [
   },
 ];
 // contact us data start
+
+// progress data start
+export const progressData: ProgressBarProps[] = [
+  {
+    label: "RELIABLECOVER INSURANCE",
+    percentage: 80,
+  },
+  {
+    label: "HUMAN RESOURCES",
+    percentage: 65,
+  },
+  {
+    label: "LIFESECURE INSURANCE",
+    percentage: 75,
+  },
+];
+
+// progress data start
+
+// gallery img data start
+export const galleryData: galleryProps[] = [
+  {
+    img: "/images/gallery-img-1.webp",
+  },
+  {
+    img: "/images/gallery-img-2.webp",
+  },
+  {
+    img: "/images/gallery-img-3.webp",
+  },
+  {
+    img: "/images/gallery-img-4.webp",
+  },
+  {
+    img: "/images/gallery-img-5.webp",
+  },
+  {
+    img: "/images/gallery-img-6.webp",
+  },
+];
+// gallery img data start
+
+// featured blogs data start
+export const featuredBlogCards: FeaturedBlogCardProps[] = [
+  {
+    title: "Exploring the Full Spectrum of Digital Marketing’s Influence",
+    author: "GROWHUB",
+    date: "November 28, 2023",
+    imageUrl: "/images/gallery-img-1.webp",
+  },
+  {
+    title: "Delivering Memorable and Building Brand the Company",
+    author: "GROWHUB",
+    date: "November 28, 2023",
+    imageUrl: "/images/gallery-img-2.webp",
+  },
+  {
+    title: "Mastery of Creative Problem Solving in Your Startup",
+    author: "GROWHUB",
+    date: "November 28, 2023",
+    imageUrl: "/images/gallery-img-3.webp",
+  },
+];
+
+// featured blogs data end

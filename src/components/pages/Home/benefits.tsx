@@ -1,7 +1,9 @@
 import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
+import { Progress } from "@/components/shared/progress";
 import SharedButton from "@/components/shared/sharedButton";
 import Image from "next/image";
+import { progressData } from "@/constants/data";
 
 function BenefitsSection() {
   return (
@@ -12,18 +14,15 @@ function BenefitsSection() {
             accent="People Benefits"
             heading1="Get 50% Off On"
             heading2="YourFirst Insurance Plan"
-            subhead="In addition to competition, factory companies also fe challenges related
-                    to labor and the environment. Many factory companies hae been
-                    criticized for exploiting workers and polluting the environment address
-                    these concerns"
+            subhead="Take the first step towards comprehensive protection with Horizon Care. Enjoy exclusive discounts designed to make health and life insurance more accessible for you and your family."
           />
           <FadingSlide>
             <p className="font-heading font-medium text-lg md:text-xl mt-6 md:mt-8">
-              Mechanic's Special Services:
+            Our Special Benefits:
             </p>
           </FadingSlide>
           <FadingSlide>
-            <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 md:gap-6 mt-2">
+            <div className="grid grid-cols-2 xs:grid-cols-2 gap-4 md:gap-6 mt-2">
               {[...Array(4)].map((_, i) => (
                 <div
                   key={i}
@@ -89,23 +88,13 @@ these concerns"
           </FadingSlide>
           <FadingSlide>
             <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 md:gap-6 mt-2">
-              {[...Array(4)].map((_, i) => (
-                <div
-                  key={i}
-                  className="col-span-1 flex items-center gap-2 md:gap-3"
-                >
-                  <svg
-                    className="w-5 h-5 md:w-6 md:h-6 text-primary"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"
-                    />
-                  </svg>
-                  <p className="font-body text-sm md:text-base text-hover/70">
-                    Fast Growing Sells
-                  </p>
+              {progressData?.map((progress) => (
+                <div key={progress.label} className="space-y-2">
+                  <div className="flex items-center justify-between w-full">
+                    <p className="font-body">{progress.label}</p>
+                    <p className="font-body">{progress.percentage}%</p>
+                  </div>
+                  <Progress value={65} />
                 </div>
               ))}
             </div>

@@ -1,15 +1,10 @@
 import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
+import { featuredBlogCards } from "@/constants/data";
+import { FeaturedBlogCardProps } from "@/types";
 import Image from "next/image";
 import React from "react";
-
-interface BlogCardProps {
-  title: string;
-  author: string;
-  date: string;
-  imageUrl: string;
-}
 
 function FeaturedBlogs() {
   return (
@@ -21,8 +16,8 @@ function FeaturedBlogs() {
             heading1="Most Reliable Insures"
             heading2="Efficient Consulting Agency"
             subhead="Neque partrient sed nascetur facilisis suscipit ridiculus magna lobortis
-imperdiet vivamus est aliquam euismod nector quam convallis ornare
-justo service visionary sources unleash online"
+                    imperdiet vivamus est aliquam euismod nector quam convallis ornare
+                    justo service visionary sources unleash online"
           />
           <FadingSlide>
             <div className="w-full md:w-1/2 lg:w-[50%]">
@@ -31,14 +26,9 @@ justo service visionary sources unleash online"
           </FadingSlide>
         </div>
         <div className="md:col-span-8 space-y-6 md:space-y-8 lg:space-y-12">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <FadingSlide key={i}>
-              <BlogCard
-                author="By Growhub"
-                date="November 28, 2023"
-                imageUrl="/images/benefits-1.webp"
-                title="Exploring the Full Spectrum of Digital Marketing’s…"
-              />
+          {featuredBlogCards?.map((featuredBlog) => (
+            <FadingSlide key={featuredBlog.title}>
+              <BlogCard {...featuredBlog} />
             </FadingSlide>
           ))}
         </div>
@@ -48,7 +38,7 @@ justo service visionary sources unleash online"
 }
 
 const BlogCard = React.memo(
-  ({ title, author, date, imageUrl }: BlogCardProps) => {
+  ({ title, author, date, imageUrl }: FeaturedBlogCardProps) => {
     return (
       <div className="flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
         <div className="relative w-full md:w-48 h-48">
@@ -63,7 +53,7 @@ const BlogCard = React.memo(
 
         <div className="flex flex-col flex-grow p-6">
           <div className="flex items-center text-sm font-body text-gray-600 mb-2">
-            <span>BY {author.toUpperCase()}</span>
+            <span className="capitalize">BY {author}</span>
             <span className="mx-2">•</span>
             <span className="font-body">{date}</span>
           </div>

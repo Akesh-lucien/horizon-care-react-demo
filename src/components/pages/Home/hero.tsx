@@ -104,7 +104,7 @@ function HeroSection() {
             className={cn("col-span-1 py-0 space-y-0 opacity-0")}
           >
             <p className="font-body font-semibold uppercase text-sm accent-heading">
-              New Opportunities Makes Company Growth
+              Secure Your Future with Horizon Care
             </p>
             <h2
               ref={headRef}
@@ -122,14 +122,15 @@ function HeroSection() {
               ref={subHedRef}
               className="font-body font-normal text-lg text-hover/50"
             >
-              Cubilia sem praesent euismod sociosqu est volutpat leo ultrices,
+              Empowering you with reliable, affordable, and flexible health
+              insurance plans tailored to your needs.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 items-center space-y-0 space-x-0">
             <div className="col-span-1 max-w-[70%]">
               <FadingSlide delay={0.8}>
-                <SharedButton renderText="view services" />
+                <SharedButton renderText="Explore Our Plans" />
               </FadingSlide>
             </div>
             <div className="col-span-1">
@@ -153,6 +154,8 @@ function HeroSection() {
               alt="hero-banner-lg"
               width={600}
               height={600}
+              className="w-full h-[70vh] object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               priority
             />
           </FadingSlide>
