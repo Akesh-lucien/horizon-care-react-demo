@@ -49,6 +49,7 @@ export const footerData: IFooterData = {
 // blogs data start
 export const blogData: BlogCardProps[] = [
   {
+    id: "the-future-of-healthcare-insurance",
     title: "The Future of Healthcare Insurance",
     description:
       "Discover how digital transformation is reshaping healthcare insurance, making policies more accessible, personalized, and efficient for everyone.",
@@ -58,6 +59,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/gallery-img-1.webp",
   },
   {
+    id: "mastering-health-insurance-plans-in-2025",
     title: "Mastering Health Insurance Plans in 2025",
     description:
       "A comprehensive guide to understanding and selecting the best health insurance plans for you and your family.",
@@ -67,6 +69,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/gallery-img-2.webp",
   },
   {
+    id: "key-benefits-of-preventive-healthcare",
     title: "Key Benefits of Preventive Healthcare",
     description:
       "Learn how preventive healthcare can reduce costs and improve your overall well-being with early detection strategies.",
@@ -76,6 +79,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/gallery-img-3.webp",
   },
   {
+    id: "navigating-claims-a-beginner’s-guide",
     title: "Navigating Claims: A Beginner’s Guide",
     description:
       "Step-by-step guidance on how to file health insurance claims smoothly and avoid common pitfalls.",
@@ -85,6 +89,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/gallery-img-4.webp",
   },
   {
+    id: "boost-your-health-with-these-wellness-tips",
     title: "Boost Your Health with These Wellness Tips",
     description:
       "Discover practical wellness strategies to enhance your health and reduce the need for extensive medical care.",
@@ -94,6 +99,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/gallery-img-5.webp",
   },
   {
+    id: "the-importance-of-mental-health-coverage",
     title: "The Importance of Mental Health Coverage",
     description:
       "Understand why mental health coverage is vital in modern healthcare insurance policies and how it benefits you.",
@@ -103,6 +109,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/mental-health.webp",
   },
   {
+    id: "10-essential-health-insurance-tips",
     title: "10 Essential Health Insurance Tips",
     description:
       "Improve your insurance literacy with these essential tips for maximizing your coverage and minimizing costs.",
@@ -112,6 +119,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/insurance-tips.jpg",
   },
   {
+    id: "why-family-health-plans-are-a-smart-choice",
     title: "Why Family Health Plans Are a Smart Choice",
     description:
       "Explore the benefits of family health insurance plans and why they’re a cost-effective option for households.",
@@ -121,6 +129,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/family-health.jpg",
   },
   {
+    id: "a-guide-to-remote-healthcare-services",
     title: "A Guide to Remote Healthcare Services",
     description:
       "Learn how telemedicine is revolutionizing healthcare access, making medical consultations more convenient than ever.",
@@ -130,6 +139,7 @@ export const blogData: BlogCardProps[] = [
     imageUrl: "/images/telemedicine.jpg",
   },
   {
+    id: "exploring-the-role-of-ai-in-healthcare-insurance",
     title: "Exploring the Role of AI in Healthcare Insurance",
     description:
       "Discover how AI is transforming claims processing, fraud detection, and personalized healthcare plans.",

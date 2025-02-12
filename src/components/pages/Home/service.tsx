@@ -2,12 +2,13 @@ import FadingSlide from "@/components/shared/fadingSlide";
 import Heading from "@/components/shared/heading";
 import SharedButton from "@/components/shared/sharedButton";
 import { useGSAP } from "@gsap/react";
-import { LightbulbIcon } from "lucide-react";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { insuranceServices } from "@/constants/data";
 import { InsuranceService } from "@/types";
+import LightIcon from "../../../../public/svg/light.svg";
+import { cn } from "@/lib/utils";
 
 function ServiceSection() {
   return (
@@ -48,10 +49,12 @@ function ServiceSection() {
           </FadingSlide>
         </div>
         {/*section2*/}
-        <div className="col-span-1 grid grid-cols-2 xs:grid-cols-2 gap-4 md:gap-12">
+        <div className="col-span-1 grid grid-cols-2 xs:grid-cols-2 gap-0 md:gap-0">
           {insuranceServices?.map((service, index) => (
             <FadingSlide key={index}>
-              <HoverCard {...service} />
+              <div className="p-2 md:p-4">
+                <HoverCard {...service} />
+              </div>
             </FadingSlide>
           ))}
         </div>
@@ -99,13 +102,16 @@ const HoverCard = React.memo(({ title, description }: InsuranceService) => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col flex-grow transition-all duration-500 cursor-pointer space-y-8 items-center justify-center hover:border-t-4 border-primary rounded-xl drop-shadow-xl bg-white/90 px-5 py-12"
+      className="flex flex-col drop-shadow-xl rounded-xl transition-all duration-500 cursor-pointer space-y-8 items-center justify-center border-t-4 border-white hover:border-t-4 hover:border-primary bg-white/90 px-5 py-12"
     >
       <div
         ref={iconRef}
-        className="rounded-full h-24 w-24 bg-primary/10 flex items-center justify-center"
+        className={cn(
+          hovered && "text-white",
+          "rounded-full h-24 w-24 bg-primary/10 flex items-center justify-center"
+        )}
       >
-        <LightbulbIcon size={64} color={hovered ? "#fafafa" : "black"} />
+        <LightIcon />
       </div>
       <h3 className="font-heading font-medium text-primary text-2xl capitalize mt-3">
         {title}

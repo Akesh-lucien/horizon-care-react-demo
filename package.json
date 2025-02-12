@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.3.1",
     "@gsap/react": "^2.1.2",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-label": "^2.1.2",
@@ -29,6 +30,7 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

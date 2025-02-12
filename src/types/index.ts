@@ -34,7 +34,8 @@ export interface IFooterData {
 
 // blogs types start
 export interface BlogCardProps {
-  title: string;
+  id?: string;
+  title: string | undefined;
   description: string;
   author: string;
   date: string;

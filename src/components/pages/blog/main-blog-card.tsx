@@ -2,8 +2,10 @@ import Image from "next/image";
 import { BlogCardProps } from "@/types/index";
 import { Calendar, User } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function MainBlogCard({
+  id,
   title,
   description,
   author,
@@ -11,8 +13,12 @@ function MainBlogCard({
   category,
   imageUrl,
 }: BlogCardProps) {
+  const router = useRouter();
   return (
-    <div className="max-w-4xl mx-auto bg-gray-300/50 rounded-2xl overflow-hidden shadow-sm">
+    <div
+      onClick={() => router.push(`/blog/${id}`)}
+      className="max-w-4xl mx-auto bg-gray-300/50 rounded-2xl overflow-hidden shadow-sm"
+    >
       {/* Hero Image */}
       <div className="relative w-full h-[60vh]">
         <Image
