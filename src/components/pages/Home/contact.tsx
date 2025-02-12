@@ -33,8 +33,7 @@ function ContactSection() {
               </div>
 
               <div className="relative">
-                <select className="w-full px-4 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary appearance-none font-body text-sm md:text-base">
-                </select>
+                <select className="w-full px-4 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary appearance-none font-body text-sm md:text-base"></select>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -61,7 +60,7 @@ function ContactSection() {
                     className="w-full px-4 pl-10 py-2 md:py-3 bg-white/90 rounded-full border border-gray-200 focus:outline-none focus:border-primary font-body text-sm md:text-base"
                   />
                 </div>
-                <FadingSlide delay={1}>
+                <FadingSlide>
                   <div className="w-full md:w-[50%]">
                     <SharedButton renderText="make an appointment" />
                   </div>
