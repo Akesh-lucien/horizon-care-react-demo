@@ -10,6 +10,10 @@ import {
   ProgressBarProps,
   galleryProps,
   FeaturedBlogCardProps,
+  Benefits,
+  InsuranceService,
+  Testimonial,
+  Tag,
 } from "@/types/index";
 
 // footer data start
@@ -45,89 +49,94 @@ export const footerData: IFooterData = {
 // blogs data start
 export const blogData: BlogCardProps[] = [
   {
-    title: "The Future of Web Development",
+    title: "The Future of Healthcare Insurance",
     description:
-      "Encourage a growth mindset within your organization. View change not as a threat but as an opportunity for learning, innovation, and improvement. Promote a culture of continuous learning and skill development. Employees who are equipped to acquire new skills quickly",
-    author: "Jane Doe",
+      "Discover how digital transformation is reshaping healthcare insurance, making policies more accessible, personalized, and efficient for everyone.",
+    author: "Dr. Jane Doe",
     date: "2025-02-01",
-    category: "Technology",
-    imageUrl: "/images/benefits-1.webp",
+    category: "Healthcare",
+    imageUrl: "/images/gallery-img-1.webp",
   },
   {
-    title: "Mastering JavaScript in 2025",
+    title: "Mastering Health Insurance Plans in 2025",
     description:
-      "A comprehensive guide to becoming a JavaScript expert this year.",
+      "A comprehensive guide to understanding and selecting the best health insurance plans for you and your family.",
     author: "John Smith",
     date: "2025-01-25",
-    category: "Programming",
-    imageUrl: "/images/javascript.jpg",
+    category: "Insurance",
+    imageUrl: "/images/gallery-img-2.webp",
   },
   {
-    title: "UI/UX Design Principles for Modern Apps",
-    description: "Learn the key principles to create stunning user interfaces.",
+    title: "Key Benefits of Preventive Healthcare",
+    description:
+      "Learn how preventive healthcare can reduce costs and improve your overall well-being with early detection strategies.",
     author: "Emily Johnson",
     date: "2025-01-15",
-    category: "Design",
-    imageUrl: "/images/ui-ux.jpg",
+    category: "Wellness",
+    imageUrl: "/images/gallery-img-3.webp",
   },
   {
-    title: "Getting Started with Next.js",
+    title: "Navigating Claims: A Beginner’s Guide",
     description:
-      "A beginner's guide to building fast and scalable web apps with Next.js.",
+      "Step-by-step guidance on how to file health insurance claims smoothly and avoid common pitfalls.",
     author: "Michael Brown",
     date: "2025-01-10",
-    category: "Web Development",
-    imageUrl: "/images/nextjs.jpg",
+    category: "Claims",
+    imageUrl: "/images/gallery-img-4.webp",
   },
   {
-    title: "Boost Your Productivity with These Tools",
-    description: "Discover top tools that can help enhance your productivity.",
+    title: "Boost Your Health with These Wellness Tips",
+    description:
+      "Discover practical wellness strategies to enhance your health and reduce the need for extensive medical care.",
     author: "Sarah Lee",
     date: "2025-01-05",
-    category: "Productivity",
-    imageUrl: "/images/productivity.jpg",
+    category: "Wellness",
+    imageUrl: "/images/gallery-img-5.webp",
   },
   {
-    title: "The Importance of Cybersecurity in 2025",
-    description: "Understand why cybersecurity is critical in the digital era.",
+    title: "The Importance of Mental Health Coverage",
+    description:
+      "Understand why mental health coverage is vital in modern healthcare insurance policies and how it benefits you.",
     author: "Chris Martin",
     date: "2025-02-03",
-    category: "Security",
-    imageUrl: "/images/cybersecurity.jpg",
+    category: "Mental Health",
+    imageUrl: "/images/mental-health.webp",
   },
   {
-    title: "10 Best Coding Practices for Developers",
-    description: "Improve your coding skills with these best practices.",
+    title: "10 Essential Health Insurance Tips",
+    description:
+      "Improve your insurance literacy with these essential tips for maximizing your coverage and minimizing costs.",
     author: "Olivia White",
     date: "2025-01-20",
-    category: "Development",
-    imageUrl: "/images/coding-practices.jpg",
+    category: "Insurance Tips",
+    imageUrl: "/images/insurance-tips.jpg",
   },
   {
-    title: "Why React is Still Dominating Frontend Development",
-    description: "An in-depth look at React's continued popularity.",
+    title: "Why Family Health Plans Are a Smart Choice",
+    description:
+      "Explore the benefits of family health insurance plans and why they’re a cost-effective option for households.",
     author: "Daniel Green",
     date: "2025-01-30",
-    category: "Frontend",
-    imageUrl: "/images/react.jpg",
+    category: "Family Health",
+    imageUrl: "/images/family-health.jpg",
   },
   {
-    title: "A Guide to Effective Remote Work",
+    title: "A Guide to Remote Healthcare Services",
     description:
-      "Tips and strategies for staying productive while working remotely.",
+      "Learn how telemedicine is revolutionizing healthcare access, making medical consultations more convenient than ever.",
     author: "Sophia Brown",
     date: "2025-02-02",
-    category: "Work",
-    imageUrl: "/images/remote-work.jpg",
+    category: "Telemedicine",
+    imageUrl: "/images/telemedicine.jpg",
   },
   {
-    title: "Exploring AI and Machine Learning in 2025",
+    title: "Exploring the Role of AI in Healthcare Insurance",
     description:
-      "How AI and machine learning are transforming industries worldwide.",
+      "Discover how AI is transforming claims processing, fraud detection, and personalized healthcare plans.",
     author: "William Davis",
     date: "2025-01-28",
-    category: "AI",
-    imageUrl: "/images/ai-ml.jpg",
+    category: "Healthcare Tech",
+    imageUrl: "/images/ai-healthcare.jpg",
   },
 ];
 
@@ -164,6 +173,12 @@ export const faqData: FAQItem[] = [
     question: "Can I integrate with existing systems?",
     answer:
       "Our solutions are designed to be compatible with most major home automation platforms. We'll conduct a full compatibility assessment before installation.",
+  },
+  {
+    id: "item-6",
+    question: "We're one of Glassdoor's Best Places to Work in 2023!",
+    answer:
+      "Celebrating our recognition as a top workplace, thanks to our outstanding team and leadership.",
   },
 ];
 // faq data end
@@ -323,7 +338,7 @@ export const blogPosts: BlogPostCardProps[] = [
     date: "November 28, 2023",
     title:
       "Exploring the Full Spectrum of Digital Marketing’s Influence and Impact in the...",
-    imageUrl: "/images/digital-marketing.jpg",
+    imageUrl: "/images/gallery-img-1.webp",
     slug: "exploring-digital-marketing-influence",
   },
   {
@@ -331,7 +346,7 @@ export const blogPosts: BlogPostCardProps[] = [
     author: "GrowHub",
     date: "November 28, 2023",
     title: "Delivering Memorable and Building Brand the Company Loyalty Zone",
-    imageUrl: "/images/brand-loyalty.jpg",
+    imageUrl: "/images/gallery-img-2.webp",
     slug: "building-brand-loyalty-zone",
   },
   {
@@ -340,7 +355,7 @@ export const blogPosts: BlogPostCardProps[] = [
     date: "November 28, 2023",
     title:
       "Mastery of Creative Problem Solving in Your Startup Office Business Plan",
-    imageUrl: "/images/startup-office.jpg",
+    imageUrl: "/images/gallery-img-3.webp",
     slug: "creative-problem-solving-startup",
   },
 ];
@@ -352,17 +367,17 @@ export const whyChooseCardsData: WhyChooseProps[] = [
   {
     title: "Best Business Consulting",
     description:
-      "Fusce condimentum mattis placerat odio donec lacus porta torq uent, mauris gravida rutrum.",
+      "Empowering businesses with strategic insights and innovative solutions to drive growth and success. We help you make informed decisions that matter.",
   },
   {
     title: "24/7 Customer Support",
     description:
-      "Placerat condimentum mattis odio donec lacus porta torq uent, mauris gravida rutrum Fusce.",
+      "Always here for you—our dedicated support team ensures prompt assistance anytime, anywhere, keeping your business running smoothly.",
   },
   {
     title: "Professional Team Members",
     description:
-      "Mattis Placerat condimentum odio donec lacus porta torq uent, mauris gravida rutrum Fusce.",
+      "A team of experts committed to excellence, bringing diverse skills and experience to deliver top-notch solutions tailored to your needs.",
   },
 ];
 // why choose us data end
@@ -448,3 +463,86 @@ export const featuredBlogCards: FeaturedBlogCardProps[] = [
 ];
 
 // featured blogs data end
+
+// benefits data end
+export const benefitsData: Benefits[] = [
+  {
+    benefit: "Affordable Premium Plans",
+  },
+  {
+    benefit: "Hassle-Free Claim Process",
+  },
+  {
+    benefit: "24/7 Customer Support",
+  },
+  {
+    benefit: "Flexible Coverage Options",
+  },
+];
+// benefits data end
+
+export const insuranceServices: InsuranceService[] = [
+  {
+    title: "SafeGuard Assurance",
+    description:
+      "Protect your assets with our risk management solutions, ensuring safety in every aspect of life.",
+  },
+  {
+    title: "EliteCover Insurance",
+    description:
+      "Exclusive insurance plans for high-net-worth individuals, offering premium protection and benefits.",
+  },
+  {
+    title: "ShieldPlus Insurance",
+    description:
+      "Advanced coverage designed to shield you from life’s uncertainties with flexible options.",
+  },
+  {
+    title: "SecureLife Insurance",
+    description:
+      "Reliable life insurance plans to secure your family’s future, no matter what life brings.",
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Diamond Miller",
+    designation: "CEO Director",
+    quote:
+      "We are helping companies untangle very large complex issues that always emerge during their digital evolution journey.",
+    imageUrl: "/path/to/diamond-miller-image.jpg", // Replace with the actual image path
+  },
+  {
+    name: "Sophia Green",
+    designation: "Marketing Head",
+    quote:
+      "Their innovative solutions helped us scale faster while maintaining top-notch quality across all platforms.",
+    imageUrl: "/path/to/sophia-green-image.jpg", // Replace with the actual image path
+  },
+  {
+    name: "Ethan Brown",
+    designation: "CTO",
+    quote:
+      "The technical expertise and dedication shown by their team were instrumental in our project success.",
+    imageUrl: "/path/to/ethan-brown-image.jpg", // Replace with the actual image path
+  },
+];
+
+export const tags: Tag[] = [
+  { id: 1, name: "Adapting" },
+  { id: 2, name: "Change" },
+  { id: 3, name: "Guide" },
+  { id: 4, name: "Health" },
+  { id: 5, name: "Project" },
+  { id: 6, name: "Raising" },
+  { id: 7, name: "Service" },
+  { id: 8, name: "Shaping" },
+  { id: 9, name: "Startup" },
+  { id: 10, name: "Strategies" },
+  { id: 11, name: "Video" },
+  { id: 12, name: "World" },
+  { id: 13, name: "Wellness" },
+  { id: 14, name: "Coverage" },
+  { id: 15, name: "Insurance" },
+  { id: 16, name: "Benefits" },
+];

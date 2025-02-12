@@ -4,6 +4,7 @@ import { Progress } from "@/components/shared/progress";
 import SharedButton from "@/components/shared/sharedButton";
 import Image from "next/image";
 import { progressData } from "@/constants/data";
+import { benefitsData } from "@/constants/data";
 
 function BenefitsSection() {
   return (
@@ -18,14 +19,14 @@ function BenefitsSection() {
           />
           <FadingSlide>
             <p className="font-heading font-medium text-lg md:text-xl mt-6 md:mt-8">
-            Our Special Benefits:
+              Our Special Benefits:
             </p>
           </FadingSlide>
           <FadingSlide>
             <div className="grid grid-cols-2 xs:grid-cols-2 gap-4 md:gap-6 mt-2">
-              {[...Array(4)].map((_, i) => (
+              {benefitsData?.map((benefit, index) => (
                 <div
-                  key={i}
+                  key={index}
                   className="col-span-1 flex items-center gap-2 md:gap-3"
                 >
                   <svg
@@ -38,7 +39,7 @@ function BenefitsSection() {
                     />
                   </svg>
                   <p className="font-body text-sm md:text-base text-hover/70">
-                    Fast Growing Sells
+                    {benefit?.benefit}
                   </p>
                 </div>
               ))}
@@ -76,14 +77,11 @@ function BenefitsSection() {
             accent="People Benefits"
             heading1="Get 50% Off On"
             heading2="YourFirst Insurance Plan"
-            subhead="In addition to competition, factory companies also fe challenges related
-to labor and the environment. Many factory companies hae been
-criticized for exploiting workers and polluting the environment address
-these concerns"
+            subhead="At Horizon Care, we’re committed to providing insurance solutions that prioritize your health, safety, and peace of mind. Enjoy a special 50% discount on your first plan, tailored to meet your unique needs."
           />
           <FadingSlide>
             <p className="font-heading font-medium text-lg md:text-xl mt-6 md:mt-8">
-              Mechanic's Special Services:
+              Our Key Strengths:
             </p>
           </FadingSlide>
           <FadingSlide>

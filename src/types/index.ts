@@ -122,3 +122,34 @@ export interface FeaturedBlogCardProps {
   imageUrl: string;
 }
 // featured blogs types end
+
+// benefits types end
+
+export type Benefits = {
+  benefit: string;
+};
+
+// benefits types end
+
+export interface InsuranceService {
+  title: string;
+  description: string;
+}
+
+export interface Testimonial {
+  name: string;
+  designation: string;
+  quote: string;
+  imageUrl: string;
+}
+
+export interface FaqDataProps {
+  id: number;
+  title: string;
+  content: string;
+}
+
+export interface Tag {
+  id: number;
+  name: string;
+}

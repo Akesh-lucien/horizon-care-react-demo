@@ -12,12 +12,10 @@ function FeaturedBlogs() {
       <div className="container grid grid-cols-1 md:grid-cols-12 items-start gap-y-8 md:gap-x-12 py-8 md:py-16">
         <div className="md:col-span-4 space-y-6 lg:space-y-8">
           <Heading
-            accent="Featured This Week"
+            accent="FEATURED THIS WEEK"
             heading1="Most Reliable Insures"
             heading2="Efficient Consulting Agency"
-            subhead="Neque partrient sed nascetur facilisis suscipit ridiculus magna lobortis
-                    imperdiet vivamus est aliquam euismod nector quam convallis ornare
-                    justo service visionary sources unleash online"
+            subhead="Empowering businesses with strategic consulting solutions to drive growth and efficiency. Our visionary approach ensures impactful results, transforming challenges into opportunities."
           />
           <FadingSlide>
             <div className="w-full md:w-1/2 lg:w-[50%]">

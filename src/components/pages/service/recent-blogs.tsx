@@ -30,7 +30,7 @@ const BlogCard = React.memo(
       <div className="max-w-xl bg-white rounded-3xl overflow-hidden shadow-sm">
         <div className="relative">
           <img
-            src="/images/blogs-img.webp"
+            src={imageUrl}
             alt={title}
             className="w-full h-64 object-cover"
           />

@@ -6,6 +6,8 @@ import { LightbulbIcon } from "lucide-react";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
+import { insuranceServices } from "@/constants/data";
+import { InsuranceService } from "@/types";
 
 function ServiceSection() {
   return (
@@ -34,9 +36,9 @@ function ServiceSection() {
           </FadingSlide>
           <FadingSlide>
             <p className="font-body font-normal text-sm sm:text-base md:text-md text-hover/50">
-              Abitant porta litora pretium auctasor imperdiet quisque lacinia
-              facisis taciti quam done fusce dignissim dapibus pellentesque
-              interdum at nullam erat laoreet dis primis hac consequat turpis.
+              Providing peace of mind with comprehensive coverage for
+              individuals and families. Safeguard your future against unexpected
+              events with plans designed for your security.
             </p>
           </FadingSlide>
           <FadingSlide>
@@ -47,9 +49,9 @@ function ServiceSection() {
         </div>
         {/*section2*/}
         <div className="col-span-1 grid grid-cols-2 xs:grid-cols-2 gap-4 md:gap-12">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <FadingSlide key={i}>
-              <HoverCard />
+          {insuranceServices?.map((service, index) => (
+            <FadingSlide key={index}>
+              <HoverCard {...service} />
             </FadingSlide>
           ))}
         </div>
@@ -58,7 +60,7 @@ function ServiceSection() {
   );
 }
 
-const HoverCard = React.memo(() => {
+const HoverCard = React.memo(({ title, description }: InsuranceService) => {
   const iconRef = useRef<HTMLDivElement | null>(null);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const [hovered, setHovered] = useState<boolean>(false);
@@ -106,10 +108,10 @@ const HoverCard = React.memo(() => {
         <LightbulbIcon size={64} color={hovered ? "#fafafa" : "black"} />
       </div>
       <h3 className="font-heading font-medium text-primary text-2xl capitalize mt-3">
-        SafeGuard Assurance
+        {title}
       </h3>
       <p className="font-body font-normal text-md text-center text-hover/50">
-        Abitant porta litora pretium auctasor imperdiet
+        {description}
       </p>
     </div>
   );

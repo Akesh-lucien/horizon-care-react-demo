@@ -1,6 +1,5 @@
-import { useState } from "react";
 import MainBlogCard from "./main-blog-card";
-import { blogData } from "@/constants/data/index";
+import { blogData, tags } from "@/constants/data/index";
 import { Input } from "@/components/shadcn/input";
 import SharedButton from "@/components/shared/sharedButton";
 import RecentBlogCard from "./recent-blog-card";
@@ -21,8 +20,8 @@ function BlogPageHeroSection() {
 
       <div className="container grid grid-cols-1 md:grid-cols-12 items-start gap-4 md:gap-8 py-6 md:py-12 px-4 sm:px-6">
         <div className="md:col-span-8 space-y-6 md:space-y-8">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <MainBlogCard key={i} {...singleBlog} />
+          {blogData?.slice(0, 4).map((blog, index) => (
+            <MainBlogCard key={index} {...blog} />
           ))}
         </div>
 
@@ -45,15 +44,15 @@ function BlogPageHeroSection() {
               <h3 className="capitalize font-heading font-medium text-xl md:text-2xl text-hover">
                 Recent Blogs
               </h3>
-              {Array.from({ length: 4 }).map((_, i) => (
-                <FadingSlide key={i}>
+              {blogData?.slice(0, 5).map((blog, index) => (
+                <FadingSlide key={index}>
                   <RecentBlogCard
-                    author="oreo"
-                    category="respiratory care"
-                    date="jan 1"
-                    description="lorem"
-                    imageUrl="/images/benefits-1.webp"
-                    title="Exploring the Full Spectrum of…"
+                    author={blog.author}
+                    category={blog.category}
+                    date={blog.date}
+                    description={blog.description}
+                    imageUrl={blog.imageUrl}
+                    title={blog.title}
                   />
                 </FadingSlide>
               ))}
@@ -64,13 +63,13 @@ function BlogPageHeroSection() {
                 Tags
               </h3>
               <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-2">
-                {Array.from({ length: 16 }).map((_, i) => (
+                {tags.map((tag) => (
                   <div
-                    key={i}
+                    key={tag.id}
                     className="py-1 px-2 md:px-3 md:py-1.5 border border-gray-300 rounded-full bg-white hover:bg-primary hover:text-white transition-all duration-500 cursor-pointer flex items-center justify-center"
                   >
                     <span className="font-body capitalize text-xs md:text-sm">
-                      Tag
+                      {tag.name}
                     </span>
                   </div>
                 ))}

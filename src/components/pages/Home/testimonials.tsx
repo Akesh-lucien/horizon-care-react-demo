@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/shadcn/carousel";
 import Heading from "@/components/shared/heading";
+import { testimonials } from "@/constants/data";
 import Image from "next/image";
 
 function TestimonialsSection() {
@@ -16,7 +17,7 @@ function TestimonialsSection() {
           <Heading accent="Testimonials" heading1="What Our Clients Say" dark />
           <Carousel className="w-full">
             <CarouselContent>
-              {Array.from({ length: 3 }).map((_, index) => (
+              {testimonials?.map((testimonial, index) => (
                 <CarouselItem key={index} className="basis-full">
                   <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-10 p-2 md:p-4">
                     <div className="w-full md:w-1/3 max-w-xs md:max-w-none">
@@ -32,15 +33,15 @@ function TestimonialsSection() {
                     <div className="flex-1 text-center md:text-left px-4 md:px-0">
                       <div className="space-y-3 md:space-y-4 lg:space-y-5">
                         <p className="text-base md:text-lg lg:text-xl font-body italic text-white leading-relaxed">
-                          "We are helping companies untangle very large complex
-                          issues that always emerge during their digital
-                          evolution journey."
+                          "{testimonial?.quote}"
                         </p>
                         <div className="mt-4">
                           <h4 className="text-lg md:text-xl lg:text-2xl font-heading font-semibold text-white">
-                            Diamond Miller
+                            {testimonial?.name}
                           </h4>
-                          <p className="text-white text-sm md:text-base">CEO Director</p>
+                          <p className="text-white text-sm md:text-base">
+                            {testimonial?.designation}
+                          </p>
                         </div>
                       </div>
                     </div>

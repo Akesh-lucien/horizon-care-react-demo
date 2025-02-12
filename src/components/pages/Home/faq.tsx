@@ -18,7 +18,7 @@ function FAQSection() {
       />
       <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-y-8 md:gap-x-7">
         <Accordion type="single" collapsible className="w-full">
-          {faqData.map((item, index) => (
+          {faqData.slice(0, 3).map((item, index) => (
             <AccordionItem key={item.id} value={item.id}>
               <div className="rounded-full bg-white px-4 md:px-8 border mb-2">
                 <AccordionTrigger className="text-left font-body text-sm md:text-lg hover:no-underline">
@@ -37,7 +37,7 @@ function FAQSection() {
           ))}
         </Accordion>
         <Accordion type="single" collapsible className="w-full">
-          {faqData.map((item, index) => (
+          {faqData.slice(3, 6).map((item, index) => (
             <AccordionItem key={item.id} value={item.id}>
               <div className="rounded-full bg-white px-4 md:px-8 border mb-2">
                 <AccordionTrigger className="text-left font-body text-sm md:text-lg hover:no-underline">
