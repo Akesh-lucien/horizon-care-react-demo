@@ -16,6 +16,11 @@ import {
   Tag,
 } from "@/types/index";
 
+import Light from "../../../public/svg/light.svg";
+import Brain from "../../../public/svg/brain.svg";
+import Graph from "../../../public/svg/grahp.svg";
+import Edit from "../../../public/svg/edit.svg";
+
 // footer data start
 export const footerData: IFooterData = {
   company: {
@@ -493,21 +498,25 @@ export const benefitsData: Benefits[] = [
 
 export const insuranceServices: InsuranceService[] = [
   {
+    Icon: Light,
     title: "SafeGuard Assurance",
     description:
       "Protect your assets with our risk management solutions, ensuring safety in every aspect of life.",
   },
   {
+    Icon: Brain,
     title: "EliteCover Insurance",
     description:
       "Exclusive insurance plans for high-net-worth individuals, offering premium protection and benefits.",
   },
   {
+    Icon: Graph,
     title: "ShieldPlus Insurance",
     description:
       "Advanced coverage designed to shield you from life’s uncertainties with flexible options.",
   },
   {
+    Icon: Edit,
     title: "SecureLife Insurance",
     description:
       "Reliable life insurance plans to secure your family’s future, no matter what life brings.",

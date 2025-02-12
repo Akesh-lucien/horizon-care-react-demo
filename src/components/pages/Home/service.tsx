@@ -63,65 +63,68 @@ function ServiceSection() {
   );
 }
 
-const HoverCard = React.memo(({ title, description }: InsuranceService) => {
-  const iconRef = useRef<HTMLDivElement | null>(null);
-  const tlRef = useRef<gsap.core.Timeline | null>(null);
-  const [hovered, setHovered] = useState<boolean>(false);
-  useGSAP(() => {
-    if (!iconRef) return;
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo(
-      iconRef.current,
-      {
-        opacity: 1,
-      },
-      {
-        rotateY: 180,
-        background: "#0c6460",
-        opacity: 1,
-        ease: "none",
-        duration: 0.4,
-      }
-    );
-    tlRef.current = tl;
+const HoverCard = React.memo(
+  ({ title, description, Icon }: InsuranceService) => {
+    const iconRef = useRef<HTMLDivElement | null>(null);
+    const tlRef = useRef<gsap.core.Timeline | null>(null);
+    const [hovered, setHovered] = useState<boolean>(false);
+    useGSAP(() => {
+      if (!iconRef) return;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(
+        iconRef.current,
+        {
+          opacity: 1,
+        },
+        {
+          rotateY: 180,
+          background: "#0c6460",
+          opacity: 1,
+          ease: "none",
+          duration: 0.4,
+        }
+      );
+      tlRef.current = tl;
 
-    return () => {
-      tl.kill();
+      return () => {
+        tl.kill();
+      };
+    }, []);
+    const handleMouseEnter = () => {
+      tlRef?.current?.play();
+      setHovered(true);
     };
-  }, []);
-  const handleMouseEnter = () => {
-    tlRef?.current?.play();
-    setHovered(true);
-  };
 
-  const handleMouseLeave = () => {
-    tlRef?.current?.reverse();
-    setHovered(false);
-  };
-  return (
-    <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="flex flex-col drop-shadow-xl rounded-xl transition-all duration-500 cursor-pointer space-y-8 items-center justify-center border-t-4 border-white hover:border-t-4 hover:border-primary bg-white/90 px-5 py-12"
-    >
+    const handleMouseLeave = () => {
+      tlRef?.current?.reverse();
+      setHovered(false);
+    };
+    return (
       <div
-        ref={iconRef}
-        className={cn(
-          hovered && "text-white",
-          "rounded-full h-24 w-24 bg-primary/10 flex items-center justify-center"
-        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="flex flex-col drop-shadow-xl rounded-xl transition-all duration-500 cursor-pointer space-y-8 items-center justify-center border-t-4 border-white hover:border-t-4 hover:border-primary bg-white/90 px-5 py-12"
       >
-        <LightIcon />
+        <div
+          ref={iconRef}
+          className={cn(
+            hovered && "!text-white !fill-white stroke-white",
+            "rounded-full h-24 w-24 bg-primary/10 flex items-center justify-center"
+          )}
+        >
+          {/* <LightIcon /> */}
+          {<Icon />}
+        </div>
+        <h3 className="font-heading font-medium text-primary text-2xl capitalize mt-3">
+          {title}
+        </h3>
+        <p className="font-body font-normal text-md text-center text-hover/50">
+          {description}
+        </p>
       </div>
-      <h3 className="font-heading font-medium text-primary text-2xl capitalize mt-3">
-        {title}
-      </h3>
-      <p className="font-body font-normal text-md text-center text-hover/50">
-        {description}
-      </p>
-    </div>
-  );
-});
+    );
+  }
+);
 HoverCard.displayName = "HoverCard";
 
 export default ServiceSection;

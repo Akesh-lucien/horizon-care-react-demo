@@ -1,3 +1,5 @@
+import React, { ReactNode, ReactSVGElement } from "react";
+
 // footer types start
 type FooterLink = {
   label: string;
@@ -133,6 +135,7 @@ export type Benefits = {
 // benefits types end
 
 export interface InsuranceService {
+  Icon: React.FC;
   title: string;
   description: string;
 }
